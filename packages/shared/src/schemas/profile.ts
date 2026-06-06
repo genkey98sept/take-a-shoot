@@ -5,10 +5,7 @@ export const usernameSchema = z
   .trim()
   .min(3, "Le pseudo doit contenir au moins 3 caracteres.")
   .max(24, "Le pseudo doit contenir au maximum 24 caracteres.")
-  .regex(
-    /^[a-zA-Z0-9_]+$/,
-    "Le pseudo peut contenir uniquement lettres, chiffres et underscores.",
-  )
+  .regex(/^[a-zA-Z0-9_]+$/, "Le pseudo peut contenir uniquement lettres, chiffres et underscores.")
   .transform((value) => value.toLowerCase());
 
 export const profileDraftSchema = z.object({
