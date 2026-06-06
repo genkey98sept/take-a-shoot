@@ -48,7 +48,8 @@
       "!**/build",
       "!**/coverage",
       "!**/ios",
-      "!**/android"
+      "!**/android",
+      "!**/database.types.ts"
     ]
   }
 }
