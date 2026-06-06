@@ -1,29 +1,26 @@
-# Supabase Architecture
+# Supabase — vue d'ensemble
 
-Supabase is the MVP backend platform for Take@Shoot.
+Supabase est la plateforme backend du MVP Take@Shoot.
 
-## Responsibilities
+> Le schéma, la RLS et le Storage sont **implémentés** (Phase 2). Référence
+> détaillée : [Base de données, RLS & Storage](database.md).
 
-- Auth: email/password first, Apple/Google later.
-- Database: Postgres.
-- Authorization: Row Level Security.
-- Media: private/authenticated Storage.
-- Functions: privileged server-side operations and async jobs where needed.
-- Realtime: used selectively for feed/comment/notification/status updates.
+## Responsabilités
+- **Auth** : email/mot de passe d'abord ; Apple/Google plus tard.
+- **Base de données** : Postgres 17.
+- **Autorisation** : Row Level Security (deny-by-default).
+- **Média** : Storage privé/authentifié (buckets `public = false`).
+- **Fonctions** : opérations privilégiées côté serveur et jobs asynchrones (Edge Functions) au besoin.
+- **Realtime** : sélectif (feed, commentaires, notifications, statut de traitement).
 
-## Security Rules
+## Règles de sécurité
+- La confidentialité est imposée par les **policies RLS et l'accès Storage**, pas seulement côté client.
+- Le mobile utilise uniquement la **clé anon (publishable)**.
+- Les opérations admin en **service-role (secret)** restent côté serveur.
+- Les **tests RLS** accompagnent toute évolution du schéma (`supabase test db`).
 
-- Privacy must be enforced in database policies and storage access, not only in client code.
-- Mobile uses anon key only.
-- Admin service-role operations stay server-only.
-- RLS tests are required when schema implementation begins.
-
-## Future Plans
-
-Dedicated plans will define:
-
-- relational schema;
-- RLS policies;
-- storage buckets and object access;
-- media rendering pipeline;
-- admin moderation workflows.
+## Cycle de vie & jobs (à venir)
+- Pipeline de rendu média (preview locale + rendu officiel backend).
+- Purge asynchrone des médias au soft delete + rétention 30 j.
+- Triggers/handlers de création de notifications.
+- Workflows de modération back-office.

@@ -1,22 +1,21 @@
-# Monorepo Architecture
+# Architecture monorepo
 
-Take@Shoot uses a monorepo from the start.
+Take@Shoot est un monorepo depuis le départ (pnpm workspaces + Turborepo).
 
-## Why
+## Pourquoi
+- Mobile et admin dépendent des mêmes contrats produit.
+- Le schéma Supabase et les types générés doivent rester alignés avec le code.
+- Les design tokens restent cohérents entre mobile et admin.
+- La CI vérifie tout le projet depuis un seul endroit.
 
-- Mobile and admin depend on the same product contracts.
-- Supabase schema and generated types must stay aligned with app code.
-- Design tokens should stay consistent across mobile and admin.
-- CI can verify the full project from one place.
+## Frontières
+- `apps/mobile` : app Expo destinée aux utilisateurs (dark-only).
+- `apps/admin` : back-office Next.js protégé.
+- `packages/shared` : contrats TypeScript, constantes, schémas de validation Zod, **types de base générés** (`database.types.ts`).
+- `packages/ui` : design tokens (et, plus tard, primitifs UI réellement cross-plateforme).
+- `supabase` : migrations, fonctions, seeds, config locale, tests RLS.
 
-## Boundaries
-
-- `apps/mobile`: user-facing Expo app.
-- `apps/admin`: protected Next.js back-office.
-- `packages/shared`: TypeScript contracts, constants, validation schemas, generated database types.
-- `packages/ui`: design tokens and later shared UI primitives when they are genuinely cross-platform.
-- `supabase`: migrations, functions, seeds, local config.
-
-## Rule
-
-Shared packages must contain stable contracts, not app-specific behavior. If code only makes sense for mobile or admin, keep it in that app.
+## Règle
+Les packages partagés contiennent des **contrats stables**, pas du comportement
+spécifique à une app. Si du code n'a de sens que pour mobile ou admin, il reste
+dans cette app.

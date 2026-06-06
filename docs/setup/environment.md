@@ -1,44 +1,39 @@
-# Environment Variables
+# Variables d'environnement
 
-Never commit real `.env` files.
+Ne jamais committer de vrai fichier `.env`. Seuls les modèles `.env.example` sont suivis.
 
-## Root
+## Clés Supabase locales
 
-Use `.env.example` as the shared template.
+`pnpm supabase:status` affiche les clés locales. Le CLI récent utilise le format
+**`Publishable` / `Secret`** (équivalents des anciennes `anon` / `service_role`) :
+
+- **`Publishable`** → clé **anon** (client) → `*_SUPABASE_ANON_KEY`.
+- **`Secret`** → clé **service-role** (serveur uniquement) → `SUPABASE_SERVICE_ROLE_KEY`.
+
+## Racine
+Modèle partagé : `.env.example`.
 
 ## Mobile
-
-Copy:
-
 ```powershell
 Copy-Item apps/mobile/.env.example apps/mobile/.env
 ```
-
-Expected variables:
-
 ```dotenv
 EXPO_PUBLIC_APP_ENV=development
 EXPO_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321
-EXPO_PUBLIC_SUPABASE_ANON_KEY=replace-with-local-anon-key
+EXPO_PUBLIC_SUPABASE_ANON_KEY=<clé Publishable locale>
 ```
-
-Only `EXPO_PUBLIC_` values are available to the mobile client. Never put service-role keys in mobile env.
+Seules les valeurs `EXPO_PUBLIC_` sont exposées au client mobile. **Jamais** de
+clé service-role/secret dans le mobile.
 
 ## Admin
-
-Copy:
-
 ```powershell
 Copy-Item apps/admin/.env.example apps/admin/.env.local
 ```
-
-Expected variables:
-
 ```dotenv
 NEXT_PUBLIC_APP_ENV=development
 NEXT_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321
-NEXT_PUBLIC_SUPABASE_ANON_KEY=replace-with-local-anon-key
-SUPABASE_SERVICE_ROLE_KEY=replace-with-local-service-role-key
+NEXT_PUBLIC_SUPABASE_ANON_KEY=<clé Publishable locale>
+SUPABASE_SERVICE_ROLE_KEY=<clé Secret locale>
 ```
-
-`SUPABASE_SERVICE_ROLE_KEY` must only be used in server-only admin code.
+`SUPABASE_SERVICE_ROLE_KEY` (secret) ne doit être utilisée que dans le code
+**server-only** de l'admin (`src/lib/supabase/server.ts`, protégé par `server-only`).

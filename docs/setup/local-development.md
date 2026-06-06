@@ -1,55 +1,40 @@
-# Local Development
+# Développement local
 
-## Prerequisites
-
-- Node compatible with the root `package.json` engines.
-- Corepack enabled.
-- pnpm activated through Corepack.
+## Prérequis
+- Node compatible avec les `engines` du `package.json` racine (≥ 22.12).
+- Corepack activé, pnpm activé via Corepack.
 - Git.
-- Docker Desktop for local Supabase.
+- Docker Desktop (pour Supabase local).
 
-## First Setup
-
+## Première installation
 ```powershell
 corepack enable
 corepack prepare pnpm@latest --activate
 pnpm install
 ```
 
-## Run Apps
-
-Mobile:
-
+## Lancer les apps
 ```powershell
-pnpm --dir apps/mobile dev
+pnpm --dir apps/mobile dev   # app Expo
+pnpm --dir apps/admin dev    # admin Next.js
+pnpm dev                     # toutes les tâches dev (Turborepo)
 ```
 
-Admin:
-
+## Supabase local
 ```powershell
-pnpm --dir apps/admin dev
+pnpm supabase:start                  # démarre la stack (1er run : téléchargement d'images)
+pnpm supabase:status                 # URLs + clés locales (voir setup/environment.md)
+pnpm dlx supabase@latest db reset    # recrée la base + applique migrations + seed
+pnpm dlx supabase@latest test db     # exécute les tests RLS (pgTAP)
+pnpm supabase:types                  # régénère packages/shared/src/database.types.ts
 ```
+Détails du schéma/RLS/Storage : [architecture/database.md](../architecture/database.md).
 
-All dev tasks:
-
+## Vérification (à passer avant de pousser)
 ```powershell
-pnpm dev
-```
-
-## Supabase Local
-
-```powershell
-pnpm supabase:start
-pnpm supabase:status
-pnpm supabase:types
-```
-
-Copy local keys into app-specific `.env` files after `supabase:status`.
-
-## Verification
-
-```powershell
-pnpm typecheck
+pnpm format:check
 pnpm lint
+pnpm typecheck
 pnpm build
+pnpm test
 ```
