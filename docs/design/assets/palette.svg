@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500" role="img" aria-label="Palette Take@Shoot">
+  <defs>
+    <linearGradient id="pbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0A0A0C"/>
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+    <radialGradient id="pglow" cx="28%" cy="28%" r="55%">
+      <stop offset="0" stop-color="#FA195E" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#FA195E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="500" fill="url(#pbg)"/>
+  <rect width="1200" height="500" fill="url(#pglow)"/>
+
+  <text x="60" y="64" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="4" fill="#E6215A">DIRECTION ARTISTIQUE</text>
+  <text x="60" y="98" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="27" font-weight="800" fill="#F4F2F0">Sombre, premium, nocturne — deux roses, jamais fusionnes</text>
+
+  <!-- Two hero pinks -->
+  <g transform="translate(60,140)">
+    <rect width="510" height="150" rx="16" fill="#FA195E"/>
+    <text x="28" y="46" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="#FFFFFF" opacity="0.85">ACCENT — UI / ACTIONS</text>
+    <text x="28" y="92" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="34" font-weight="900" fill="#FFFFFF">#FA195E</text>
+    <text x="28" y="124" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" font-weight="500" fill="#FFFFFF" opacity="0.9">Bouton primaire • FAB camera • etat actif • badge</text>
+  </g>
+  <g transform="translate(630,140)">
+    <rect width="510" height="150" rx="16" fill="#E6215A"/>
+    <text x="28" y="46" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="#FFFFFF" opacity="0.85">BRAND — SIGNATURE MARQUE</text>
+    <text x="28" y="92" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="34" font-weight="900" fill="#FFFFFF">#E6215A</text>
+    <text x="28" y="124" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" font-weight="500" fill="#FFFFFF" opacity="0.9">Logo « Take@Shoot » • le « @ » • signature carte</text>
+  </g>
+
+  <!-- Surfaces & text row -->
+  <g transform="translate(60,322)" font-family="'Segoe UI',Helvetica,Arial,sans-serif">
+    <!-- background -->
+    <rect width="120" height="96" rx="12" fill="#000000" stroke="#2A2A2C"/>
+    <text x="12" y="74" font-size="12" font-weight="700" fill="#F4F2F0">background</text>
+    <text x="12" y="90" font-size="11" fill="#6E6C70">#000000</text>
+    <!-- bgElevated -->
+    <rect x="138" width="120" height="96" rx="12" fill="#0D0E0F" stroke="#2A2A2C"/>
+    <text x="150" y="74" font-size="12" font-weight="700" fill="#F4F2F0">bgElevated</text>
+    <text x="150" y="90" font-size="11" fill="#6E6C70">#0D0E0F</text>
+    <!-- surface -->
+    <rect x="276" width="120" height="96" rx="12" fill="#1D1D1E" stroke="#2A2A2C"/>
+    <text x="288" y="74" font-size="12" font-weight="700" fill="#F4F2F0">surface</text>
+    <text x="288" y="90" font-size="11" fill="#6E6C70">#1D1D1E</text>
+    <!-- surfaceElevated -->
+    <rect x="414" width="120" height="96" rx="12" fill="#262626" stroke="#2A2A2C"/>
+    <text x="426" y="74" font-size="12" font-weight="700" fill="#F4F2F0">surfaceElev</text>
+    <text x="426" y="90" font-size="11" fill="#6E6C70">#262626</text>
+    <!-- border -->
+    <rect x="552" width="120" height="96" rx="12" fill="#3E3D3F" stroke="#525155"/>
+    <text x="564" y="74" font-size="12" font-weight="700" fill="#F4F2F0">border</text>
+    <text x="564" y="90" font-size="11" fill="#A8A6A8">#3E3D3F</text>
+    <!-- text -->
+    <rect x="690" width="120" height="96" rx="12" fill="#F4F2F0"/>
+    <text x="702" y="74" font-size="12" font-weight="700" fill="#1D1D1E">text</text>
+    <text x="702" y="90" font-size="11" fill="#3E3D3F">#F4F2F0</text>
+    <!-- textSecondary -->
+    <rect x="828" width="120" height="96" rx="12" fill="#A8A6A8"/>
+    <text x="840" y="74" font-size="12" font-weight="700" fill="#1D1D1E">textSecond</text>
+    <text x="840" y="90" font-size="11" fill="#2A2A2C">#A8A6A8</text>
+    <!-- cardFrame -->
+    <rect x="966" width="120" height="96" rx="12" fill="#ECE9E6"/>
+    <text x="978" y="70" font-size="12" font-weight="700" fill="#2A2A2A">cardFrame</text>
+    <text x="978" y="86" font-size="11" fill="#6E6C70">#ECE9E6</text>
+  </g>
+
+  <!-- reactions -->
+  <g transform="translate(60,446)" font-family="'Segoe UI',Helvetica,Arial,sans-serif">
+    <text x="0" y="18" font-size="12" font-weight="700" letter-spacing="2" fill="#6E6C70">REACTIONS</text>
+    <circle cx="120" cy="13" r="11" fill="#FF3B5C"/><text x="138" y="18" font-size="13" fill="#A8A6A8">❤️ J'adore</text>
+    <circle cx="262" cy="13" r="11" fill="#FF7A1A"/><text x="280" y="18" font-size="13" fill="#A8A6A8">🔥 Feu</text>
+    <circle cx="372" cy="13" r="11" fill="#FFC83D"/><text x="390" y="18" font-size="13" fill="#A8A6A8">😮 Wow</text>
+    <text x="486" y="18" font-size="13" fill="#A8A6A8">😂 Haha</text>
+    <text x="586" y="18" font-size="13" fill="#A8A6A8">😎 Cool</text>
+    <text x="980" y="18" font-size="12" font-style="italic" fill="#6E6C70">dark-only · pas de theme clair</text>
+  </g>
+</svg>

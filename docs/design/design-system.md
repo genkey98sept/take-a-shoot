@@ -7,6 +7,17 @@ Implémentation : [`packages/ui/src/tokens.ts`](../../packages/ui/src/tokens.ts)
 > est la version **versionnée** et fait foi pour l'implémentation. Toute évolution du design se
 > répercute ici **et** dans les tokens.
 
+## Aperçus visuels
+
+Références dérivées des mockups (valeurs = tokens approuvés). Versionnées dans `docs/design/assets/`.
+
+| Aperçu | Fichier |
+|---|---|
+| Hero / wordmark | [`assets/hero.svg`](./assets/hero.svg) |
+| Écrans (Feed · Détail · Capture) | [`assets/mockups.svg`](./assets/mockups.svg) |
+| Palette & réactions | [`assets/palette.svg`](./assets/palette.svg) |
+| Carte photobooth annotée | [`assets/photobooth-card.svg`](./assets/photobooth-card.svg) |
+
 ## 0. Direction artistique
 
 Application sociale photo « photobooth nocturne ». Ambiance **sombre, premium, nocturne/fête**.
