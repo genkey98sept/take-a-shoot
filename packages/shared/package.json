@@ -12,9 +12,9 @@
     "test": "node -e \"console.log('No shared tests required for bootstrap')\""
   },
   "dependencies": {
-    "zod": "latest"
+    "zod": "^4.4.3"
   },
   "devDependencies": {
-    "typescript": "latest"
+    "typescript": "~6.0.3"
   }
 }

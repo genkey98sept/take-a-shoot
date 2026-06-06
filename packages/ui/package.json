@@ -12,6 +12,6 @@
     "test": "node -e \"console.log('No UI tests required for bootstrap')\""
   },
   "devDependencies": {
-    "typescript": "latest"
+    "typescript": "~6.0.3"
   }
 }
