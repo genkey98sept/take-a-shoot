@@ -18,6 +18,16 @@ importers:
         specifier: latest
         version: 6.0.3
 
+  packages/shared:
+    dependencies:
+      zod:
+        specifier: latest
+        version: 4.4.3
+    devDependencies:
+      typescript:
+        specifier: latest
+        version: 6.0.3
+
 packages:
 
   '@biomejs/biome@2.4.16':
@@ -112,6 +122,9 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  zod@4.4.3:
+    resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
+
 snapshots:
 
   '@biomejs/biome@2.4.16':
@@ -177,3 +190,5 @@ snapshots:
       '@turbo/windows-arm64': 2.9.16
 
   typescript@6.0.3: {}
+
+  zod@4.4.3: {}
