@@ -23,7 +23,7 @@ const config: ExpoConfig = {
   android: {
     package: "app.takeashoot.mobile",
     adaptiveIcon: {
-      backgroundColor: "#050608",
+      backgroundColor: "#000000",
       foregroundImage: "./assets/images/android-icon-foreground.png",
       backgroundImage: "./assets/images/android-icon-background.png",
       monochromeImage: "./assets/images/android-icon-monochrome.png",
@@ -45,7 +45,7 @@ const config: ExpoConfig = {
     [
       "expo-splash-screen",
       {
-        backgroundColor: "#050608",
+        backgroundColor: "#000000",
         android: {
           image: "./assets/images/splash-icon.png",
           imageWidth: 76,
@@ -58,10 +58,6 @@ const config: ExpoConfig = {
   experiments: {
     typedRoutes: true,
     reactCompiler: true,
-  },
-  extra: {
-    appEnv: process.env.EXPO_PUBLIC_APP_ENV ?? "development",
-    supabaseUrl: process.env.EXPO_PUBLIC_SUPABASE_URL,
   },
 };
 

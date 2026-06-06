@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Take@Shoot — Back-office admin
 
-## Getting Started
+Back-office d'administration **Next.js 16 (App Router) / React 19 / Tailwind CSS 4**, en TypeScript.
+Modération, gestion des utilisateurs, file des signalements et alertes, journal des actions sensibles.
 
-First, run the development server:
+## Prérequis
+
+- Node `>= 22.12`
+- pnpm `>= 10`
+- Dépendances installées depuis la **racine** du monorepo : `pnpm install`
+
+## Démarrer
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# depuis la racine du monorepo
+pnpm --filter admin dev
+# ou depuis apps/admin
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrir <http://localhost:3000>.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environnement & sécurité
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copier `.env.example` vers `.env.local` (jamais committé). La validation est faite par `src/env.ts` (zod), qui sépare :
 
-## Learn More
+- `publicEnv` — variables `NEXT_PUBLIC_*` (URL + clé **anon**), exposables au navigateur ;
+- `serverEnv` — ajoute `SUPABASE_SERVICE_ROLE_KEY`, **strictement côté serveur**.
 
-To learn more about Next.js, take a look at the following resources:
+Le client service-role (`src/lib/supabase/server.ts`) est protégé par `import "server-only"` : toute tentative de l'importer dans un composant client casse le build. La clé service-role ne doit **jamais** atteindre le bundle navigateur.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```text
+src/
+  app/        App Router (pages, layout)
+  lib/
+    supabase/ Clients Supabase (server.ts = service-role, server-only)
+  env.ts      Validation et séparation public/serveur des variables d'env
+next.config.ts  turbopack.root pointé sur la racine du monorepo
+```
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> ⚠️ Next.js 16 introduit des changements récents. Lire `AGENTS.md` et `node_modules/next/dist/docs/` avant de coder.
