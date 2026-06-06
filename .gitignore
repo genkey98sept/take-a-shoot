@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output
+dist/
+build/
+.next/
+.expo/
+.turbo/
+coverage/
+
+# Native generated folders
+apps/mobile/ios/
+apps/mobile/android/
+
+# Environment
+.env
+.env.*
+!.env.example
+!apps/*/.env.example
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Supabase local runtime
+supabase/.branches/
+supabase/.temp/
