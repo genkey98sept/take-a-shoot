@@ -36,3 +36,7 @@ Thumbs.db
 # Supabase local runtime
 supabase/.branches/
 supabase/.temp/
+
+# DEV ONLY
+/_BRAIN/
+/Nextsession.md
