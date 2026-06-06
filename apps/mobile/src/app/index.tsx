@@ -1,3 +1,4 @@
+import { colors, typography } from "@take-a-shoot/ui";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -17,7 +18,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#000000",
+    backgroundColor: colors.background,
   },
   content: {
     flex: 1,
@@ -27,16 +28,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
   },
   logo: {
-    color: "#F4F2F0",
-    fontSize: 44,
-    fontWeight: "900",
+    color: colors.text,
+    fontSize: typography.size.display,
+    fontWeight: typography.weight.black,
   },
   at: {
-    color: "#E6215A",
+    color: colors.brand,
   },
   tagline: {
-    color: "#A8A6A8",
-    fontSize: 15,
+    color: colors.textSecondary,
+    fontSize: typography.size.body,
     textAlign: "center",
   },
 });
