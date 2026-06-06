@@ -1,0 +1,25 @@
+# Fins de ligne deterministes : LF dans le depot et a la sortie (Windows/macOS/Linux).
+# Evite le churn CRLF<->LF et garde Biome/CI coherents sur toutes les machines.
+* text=auto eol=lf
+
+# Fichiers binaires : aucune conversion.
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.webp  binary
+*.ico   binary
+*.pdf   binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.otf   binary
+*.mp4   binary
+*.mov   binary
+*.jks   binary
+*.p8    binary
+*.p12   binary
+*.keystore binary
+
+# Lockfile : genere, masque dans les diffs de revue.
+pnpm-lock.yaml linguist-generated=true
