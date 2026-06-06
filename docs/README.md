@@ -24,7 +24,9 @@ Index de la documentation technique du projet. Tout est en français.
 Voir `Nextsession.md` à la racine (notes de travail locales, non suivies par Git) :
 il détaille ce qui a été fait, l'état courant et le prochain chantier.
 
-## Conventions de documentation
-- **Toute évolution du périmètre produit** met à jour le cadrage MVP **avant** l'implémentation.
-- **Toute évolution du design** met à jour le design system **et** les tokens.
-- **Toute évolution du schéma** met à jour `architecture/database.md`, les migrations et les types générés.
+## Règles de documentation
+La méthodologie complète (où mettre quoi, cohérence à maintenir, démarrage de session) est
+définie dans **`AGENTS.md`** à la racine — chargé automatiquement par les IA. Règle d'or :
+**toute la doc technique durable vit ici, dans `docs/`** (indexée par ce fichier) — pas de doc
+éparpillée, ni dupliquée, ni morte. `Nextsession.md` (racine, local) ne contient que l'état de
+session, pas de la doc durable.
