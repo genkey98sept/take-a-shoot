@@ -1,0 +1,3 @@
+-- Seed local Take@Shoot.
+-- Intentionnellement vide pour l'instant : les données de test vivent dans les
+-- tests pgTAP (supabase/tests/). Ajouter ici des données de démo locales si besoin.
